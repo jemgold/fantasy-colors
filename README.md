@@ -2,7 +2,7 @@
 
 experiments in functional UI composition. WIP. 
 
-https://fantasy-colors-irumbnmkkr.now.sh
+https://fantasy-colors-kdwlqslhvj.now.sh
 
 ## Shiny Toys
 - daggy

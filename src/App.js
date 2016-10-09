@@ -7,7 +7,7 @@ import { pantones } from './color';
 import { Maybe } from 'ramda-fantasy';
 
 // API_ROOT :: string
-const API_ROOT = 'https://reqres-vsgrmxsqlx.now.sh';
+const API_ROOT = 'https://reqres-vsgrmxsqlx.now.sh/api';
 
 // loadColors :: int -> Task [Color]
 const loadColors = (page) =>
