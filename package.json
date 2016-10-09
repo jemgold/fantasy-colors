@@ -10,6 +10,7 @@
     "daggy": "0.0.1",
     "data.task": "^3.1.1",
     "ramda": "^0.22.1",
+    "ramda-fantasy": "^0.7.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },

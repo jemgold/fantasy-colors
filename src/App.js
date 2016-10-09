@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { compose, map, objOf, prop } from 'ramda';
+import { compose, inc, map, objOf, prop } from 'ramda';
 import { Paragraph, Heading } from './components/Typography';
 import { getJSON } from './http';
 import { RemoteData } from './types';
 import { pantones } from './color';
+import { Maybe } from 'ramda-fantasy';
 
 // API_ROOT :: string
 const API_ROOT = 'http://reqres.in/api';
 
-// loadColors :: () -> Task [Color]
-const loadColors = getJSON(`${API_ROOT}/colors?delay=1`)
-  .map(prop('data'));
+// loadColors :: int -> Task [Color]
+const loadColors = (page) =>
+  getJSON(`${API_ROOT}/colors?page=${page}&delay=1`)
+    .map(prop('data'));
 
 // Message :: { children: string } -> ReactElement
 const Message = ({ children }) => (
@@ -86,16 +88,20 @@ class App extends Component {
     super();
     this.state = {
       items: RemoteData.NotAsked,
+      page: Maybe.Just(1),
     };
   }
 
   loadItems = () => {
     this.setState({ items: RemoteData.Loading });
 
-    loadColors.fork(e => {
+    this.state.page.chain(loadColors).fork(e => {
       this.setState({ items: RemoteData.Failure(e.message) });
     }, items => {
-      this.setState({ items: RemoteData.Success(items) });
+      this.setState({
+        items: RemoteData.Success(items),
+        page: map(inc, this.state.page),
+      });
     });
   }
 
