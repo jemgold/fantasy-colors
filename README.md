@@ -1,6 +1,7 @@
 # fantasy-colors
 
-experiments in functional UI composition. WIP. 
+experiments in functional UI composition. WIP. check out src/App.js and go from
+there.
 
 https://fantasy-colors-kdwlqslhvj.now.sh
 
