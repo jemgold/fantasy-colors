@@ -21,4 +21,6 @@ by [Stefan Oestreicher](https://twitter.com/thinkfunctional)
 - [Patterns for Style Composition in
 React](https://medium.com/@jxnblk/patterns-for-style-composition-in-react-eb4f5f313e6f#.sd9wh6oud)
 by [Brent Jackson](http://twitter.com/jxnblk)
-
+- [Difference between a Promise and a
+Task](https://glebbahmutov.com/blog/difference-between-promise-and-task/) by
+[Gleb Bahmutov](https://twitter.com/bahmutov)
